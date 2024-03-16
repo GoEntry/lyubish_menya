@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>А ты любишь меня?</title>
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="page">
+    <h1 class="page__title">Алиночка, солнце, а ты любишь меня?</h1>
+    <video class="page__video" loop autoplay>
+      <source src="./video/video_love.mp4" type="video/mp4" />
+    </video>
+    <div class="buttons">
+      <button class="button" onclick="changeButtonText(this)"><span>Нет</span></button>
+      <button class="button" onclick="changeButtonText(this)"><span>Да</span></button>
+    </div>
+    <script>
+      const buttons = document.querySelectorAll('.button');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          if (button.textContent === 'Нет') {
+            button.textContent = 'Неправда -_-';
+          } else if (button.textContent === 'Неправда -_-') {
+            button.textContent = 'Нет';
+          } else if (button.textContent === 'Да') {
+            button.textContent = 'Я тебя тоже люблю 💗';
+          } else if (button.textContent === 'Я тебя тоже люблю 💗') {
+            button.textContent = 'Да';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

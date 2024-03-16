@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: inherit;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  background-color: #fff;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgb(255, 255, 255 / 0.3);
+}
+
+.page__video {
+  display: flex;
+  position: relative;
+  inset: 0;
+  max-height: 65%;
+  max-width: 65%;
+  margin: 0 auto 0;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.page__title {
+  display: flex;
+  text-align: center;
+  z-index: 1;
+  max-width: 720px;
+  margin: 15px auto 0;
+  font-size: 55px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page__title::after {
+  content: "*";
+  position: relative;
+}
+
+
+.page__title:hover {
+  color: #4c4c4c;
+  cursor: default;
+}
+
+.page__title:hover::before {
+  content: "Главное отвечай \A пожалуйста честно🤗";
+  position: absolute;
+  z-index: 1;
+  top: 170px;
+  right: 200px;
+  max-width: 360px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 36px 44px;
+  box-shadow: 0 12px 0 #000;
+  color: #000;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: initial;
+  background-color: #fff;
+  white-space: pre;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+button{
+  font-size: 17px;
+  line-height: 15px;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 55px;
+  width: 120px;
+  border-radius: 10px;
+}
+
+button span{
+  position: relative;
+  z-index: 2;
+  font-family: "Raleway", sans-serif;  
+  text-align: center;
+}
+
+button:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 10px;
+  background: #DDB8FF;
+  transition: all .35s;
+}
+
+button:hover{
+  border-radius: 10px;
+}
+
+button:hover:after{
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media (width <=413px) {
+  .page__title {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    max-width: 376px;
+    margin: 15px auto 70px;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+
+  .page__title::after {
+    visibility: hidden;
+  }
+
+  .page__title:hover::before {
+    content: "Главное отвечай \A пожалуйста честно🤗";
+    position: absolute;
+    top: 140px;
+    right: 5px;
+    max-width: 200px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 20px 10px;
+    box-shadow: 0 6px 0 #000;
+    color: #000;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: justify;
+    text-transform: initial;
+    background-color: #fff;
+    white-space: pre;
+    transition: 0s;
+  }
+
+  .buttons {
+    margin-top: 500px;
+  }
+
+  .page__video {
+    position: absolute;
+    inset: 0;
+    max-width: 100%;
+    height: 50%;
+    margin: 50% auto 0;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .click_yes {
+    height: 25px;
+    width: 45px;
+  }
+  
+  .click_no {
+    height: 25px;
+    width: 45px;
+  }
+}
